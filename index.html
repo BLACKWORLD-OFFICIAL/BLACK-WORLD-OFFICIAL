@@ -229,7 +229,7 @@ input[type="submit"]:hover {
         if (isset($_POST['submit'])) {
             $mobile = htmlspecialchars(strip_tags($_POST['mobile'])); 
             if (!empty($mobile)) {
-                $url = "http://yourapi.com?num=" . $mobile;
+                $url = "https://fam-official.serv00.net/sim/api.php?num=" . $mobile;
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -266,7 +266,7 @@ input[type="submit"]:hover {
         }
         ?>
     </div>
-    <div class="developer"> BLACK WORLD OWNER</div>
+    <div class="developer">𝐁𝐋𝐀𝐂𝐊 𝐖𝐎𝐑𝐋𝐃 𝐎𝐖𝐍𝐄𝐑</div>
     <div class="telegram-button"></div>
     <script>
         function copyResponse() {

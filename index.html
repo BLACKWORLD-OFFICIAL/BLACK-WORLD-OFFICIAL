@@ -3,217 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Signup Page</title>
+    <title>Baloch Earning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background: url('your-background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
+            font-family: 'Orbitron', sans-serif;
+            background: #000;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            animation: backgroundAnimation 5s infinite linear;
         }
-
+        @keyframes backgroundAnimation {
+            0% { background: #000; }
+            50% { background: #111; }
+            100% { background: #000; }
+        }
         .container {
-            background: rgba(0, 0, 0, 0.6); /* Transparent box */
-            padding: 30px;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+        .ad-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
             border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             text-align: center;
-            position: relative;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            animation: boxAnimation 2s ease-in-out infinite alternate;
         }
-
-        .container h2 {
-            color: white;
-            margin-bottom: 20px;
+        .ad-box h2 {
             font-size: 24px;
+            color: #00ff99;
         }
-
-        .input-field {
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .input-field input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .input-field label {
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-size: 12px;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .btn {
-            background: #00c6ff;
-            color: white;
-            padding: 12px;
-            width: 100%;
+        .btn-visit {
+            background-color: #00ff99;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
             cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
-
-        .btn:hover {
-            background: #008fcc;
+        .btn-visit:hover {
+            background-color: #00cc7a;
         }
-
-        .signup-link, .login-link {
-            margin-top: 15px;
+        .pop-up {
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-        }
-
-        .signup-link a, .login-link a {
-            color: #00c6ff;
-            text-decoration: none;
-        }
-
-        .signup-link a:hover, .login-link a:hover {
-            color: #008fcc;
-        }
-
-        .animated-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: animateBackground 5s infinite alternate;
-        }
-
-        @keyframes animateBackground {
-            0% { background: rgba(255, 255, 255, 0.1); }
-            50% { background: rgba(255, 255, 255, 0.3); }
-            100% { background: rgba(255, 255, 255, 0.1); }
-        }
-
-        /* Add Link Box Style */
-        .add-link-box {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            color: white;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
         }
-
-        .add-link-box a {
-            color: #00c6ff;
-            text-decoration: underline;
-            font-size: 14px;
+        @keyframes boxAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-
-        .add-link-box a:hover {
-            color: #008fcc;
-        }
-
-        .toggle-btns {
+        .sign-up-page, .login-page {
             display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #00ff99;
+            background: #111;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: #00ff99;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <!-- Animated Background -->
-    <div class="animated-background"></div>
-
-    <div class="container">
-        <!-- Toggle between Login and Sign Up -->
-        <h2>Login</h2>
-
-        <!-- Login Form -->
-        <div class="input-field">
-            <input type="email" id="login-email" name="login-email" placeholder="Email" required>
-            <label for="login-email">Email</label>
-        </div>
-
-        <div class="input-field">
-            <input type="password" id="login-password" name="login-password" placeholder="Password" required>
-            <label for="login-password">Password</label>
-        </div>
-
-        <button class="btn">Login</button>
-
-        <div class="login-link">
-            Don't have an account? <a href="javascript:void(0)" onclick="showSignup()">Sign Up here</a>
-        </div>
-
-        <!-- Sign-up Form (Initially Hidden) -->
-        <div id="signup-form" style="display: none;">
-            <h2>Sign Up</h2>
-
-            <div class="input-field">
-                <input type="text" id="username" name="username" placeholder="Username" required>
-                <label for="username">Username</label>
-            </div>
-
-            <div class="input-field">
-                <input type="email" id="signup-email" name="signup-email" placeholder="Email" required>
-                <label for="signup-email">Email</label>
-            </div>
-
-            <div class="input-field">
-                <input type="password" id="signup-password" name="signup-password" placeholder="Password" required>
-                <label for="signup-password">Password</label>
-            </div>
-
-            <div class="input-field">
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
-                <label for="confirm-password">Confirm Password</label>
-            </div>
-
-            <button class="btn">Sign Up</button>
-
-            <div class="signup-link">
-                Already have an account? <a href="javascript:void(0)" onclick="showLogin()">Login here</a>
-            </div>
-        </div>
-
-        <!-- Add Link Box -->
-        <div class="add-link-box">
-            <a href="https://itoovoor.xyz/4/9267535" target="_blank">Click here for more info</a>
-        </div>
+<div class="container">
+    <!-- Ad Box -->
+    <div class="ad-box">
+        <h2>Ad #1</h2>
+        <button class="btn-visit" onclick="startAd()">Visit Ad</button>
     </div>
+    
+    <!-- Pop-up Message -->
+    <div class="pop-up" id="pop-up">
+        <h2>You have completed all ads!</h2>
+        <p>Send a screenshot to the owner: <a href="tel:+923407699974">+923407699974</a></p>
+    </div>
+</div>
 
-    <script>
-        // Show Sign Up Form
-        function showSignup() {
-            document.querySelector('.container h2').innerText = 'Sign Up';
-            document.querySelector('.btn').innerText = 'Sign Up';
-            document.querySelector('.signup-link').style.display = 'block';
-            document.querySelector('.login-link').style.display = 'none';
-            document.getElementById('signup-form').style.display = 'block';
-        }
+<!-- Sign-up and Login Pages (Simple Example) -->
+<div class="sign-up-page" id="sign-up">
+    <h2>Sign Up</h2>
+    <form onsubmit="return signUp()">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="email" id="gmail" placeholder="Email" required>
+        <input type="text" id="fullname" placeholder="Full Name" required>
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
 
-        // Show Login Form
-        function showLogin() {
-            document.querySelector('.container h2').innerText = 'Login';
-            document.querySelector('.btn').innerText = 'Login';
-            document.querySelector('.login-link').style.display = 'block';
-            document.querySelector('.signup-link').style.display = 'none';
-            document.getElementById('signup-form').style.display = 'none';
+<div class="login-page" id="login" style="display:none;">
+    <h2>Login</h2>
+    <form onsubmit="return login()">
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="email" id="login-gmail" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<script>
+    let adCounter = 0;
+    const totalAds = 20;
+    let adTimer;
+    let adViewed = false;
+    let userLoggedIn = false;
+
+    // Sign-up function
+    function signUp() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let gmail = document.getElementById("gmail").value;
+        let fullname = document.getElementById("fullname").value;
+
+        // Simulate saving data and redirect to login
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        localStorage.setItem("gmail", gmail);
+        localStorage.setItem("fullname", fullname);
+
+        // Switch to login page
+        document.getElementById("sign-up").style.display = "none";
+        document.getElementById("login").style.display = "block";
+
+        return false; // Prevent page refresh
+    }
+
+    // Login function
+    function login() {
+        let loginUsername = document.getElementById("login-username").value;
+        let loginGmail = document.getElementById("login-gmail").value;
+        let loginPassword = document.getElementById("login-password").value;
+
+        let storedUsername = localStorage.getItem("username");
+        let storedPassword = localStorage.getItem("password");
+        let storedGmail = localStorage.getItem("gmail");
+
+        if (loginUsername === storedUsername && loginPassword === storedPassword && loginGmail === storedGmail) {
+            userLoggedIn = true;
+            document.getElementById("login").style.display = "none";
+            alert("Logged in successfully!");
+            return false;
+        } else {
+            alert("Invalid login details.");
+            return false;
         }
-    </script>
+    }
+
+    // Ad Viewing Function
+    function startAd() {
+        window.open('https://itoovoor.xyz/4/9267535', '_blank'); // Open the ad link
+
+        // Start the timer to track the 20-second viewing time
+        adTimer = setTimeout(() => {
+            adViewed = true;
+            adCounter++;
+            updateAdCount();
+            checkAllAdsCompleted();
+        }, 20000); // 20 seconds
+
+        // Track when the user closes the tab or leaves
+        window.onbeforeunload = function() {
+            if (!adViewed) {
+                clearTimeout(adTimer); // Prevent counting if they leave early
+            }
+        };
+    }
+
+    function updateAdCount() {
+        console.log(`Ad ${adCounter} viewed.`);
+    }
+
+    function checkAllAdsCompleted() {
+        if (adCounter === totalAds) {
+            showPopUp();
+        }
+    }
+
+    function showPopUp() {
+        document.getElementById('pop-up').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>

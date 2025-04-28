@@ -880,7 +880,6 @@
         // Initialize the app when DOM is loaded
         document.addEventListener('DOMContentLoaded', init);
     </script>
-<!-- Start of Neon Social Icons with Enhanced Animation -->
 <!-- Start of Neon Social Icons -->
 <style>
   .social-icons-neon {
@@ -895,8 +894,12 @@
   .social-icons-neon a {
     text-decoration: none;
     background: transparent;
-    padding: 5px; /* Small padding for smaller icons */
-    transition: 0.3s;
+    padding: 10px;
+    border: 2px solid #0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #0ff, 0 0 16px #0ff, 0 0 24px #0ff;
+    animation: pulse 2s infinite ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -906,13 +909,13 @@
     box-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 45px #0ff;
   }
   .social-icons-neon svg {
-    width: 25px; /* Smaller icon size */
-    height: 25px;
-    fill: #0ff; /* Neon glow */
+    width: 35px;
+    height: 35px;
+    fill: #0ff;
   }
   @keyframes pulse {
     0% { box-shadow: 0 0 8px #0ff, 0 0 16px #0ff; }
-    50% { box-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+    50% { box-shadow: 0 0 25px #0ff, 0 0 50px #0ff; }
     100% { box-shadow: 0 0 8px #0ff, 0 0 16px #0ff; }
   }
 </style>
@@ -928,14 +931,14 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.813-42.175-48.459-48.46C456.9 64 288 64 288 64s-168.9 0-213.197 11.623c-23.645 6.285-42.178 24.81-48.459 48.46C16 168.376 16 256 16 256s0 87.624 10.344 131.917c6.281 23.65 24.813 42.175 48.459 48.46C119.1 448 288 448 288 448s168.9 0 213.197-11.623c23.645-6.285 42.178-24.81 48.459-48.46C560 343.624 560 256 560 256s0-87.624-10.345-131.917zM232 336V176l142 80-142 80z"/></svg>
   </a>
 
-  <!-- WhatsApp Channel (Logo) -->
+  <!-- WhatsApp Channel -->
   <a href="https://whatsapp.com/channel/0029Vb2TegQ8aKvLcZs92Y3r" target="_blank" title="WhatsApp Channel">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/WhatsApp_logo_2022.svg" alt="WhatsApp Channel" style="width: 25px; height: 25px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M511.7 387.3c-1.7-13.6-10-26.2-22.4-35l-104-73.7c-13.2-9.4-31.3-11-45.7-3.9l-40.6 20.4c-50.2-26.6-91.3-67.7-117.9-117.9l20.4-40.6c7.1-14.3 5.5-32.5-3.9-45.7l-73.7-104C150.9 10.3 138.3 2 124.7.3 111.1-1.4 97.8 4.2 89.2 15.7L34.7 91.3C12.8 120.2 0 154.7 0 191.1 0 358.5 153.5 512 320.9 512c36.4 0 70.9-12.8 99.8-34.7l75.6-54.5c11.5-8.6 17.1-21.9 15.4-35.5z"/></svg>
   </a>
 
-  <!-- WhatsApp Personal Number (Logo) -->
+  <!-- WhatsApp Personal Number -->
   <a href="https://wa.me/923407699974" target="_blank" title="WhatsApp Chat">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" style="width: 25px; height: 25px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M380.9 97.1C339-7.6 233.6-29.3 141 9.2c-80.6 34.1-117 122.8-90.6 202.5L7.7 413.7c-3.5 10.2 2.2 21.3 12.4 24.8 2.1.7 4.3 1 6.4 1 7.9 0 15.5-4.2 19.6-11.5l78.8-125.6c64.8 41.1 148.5 47.1 215.5 13.6 80.6-38.6 117-127.3 90.6-207zM224 336c-67.2 0-122-54.8-122-122S156.8 92 224 92s122 54.8 122 122-54.8 122-122 122z"/></svg>
   </a>
 </div>
 <!-- End of Neon Social Icons -->
